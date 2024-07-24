@@ -1,8 +1,56 @@
+# def binario(n:str):
+#     decimal = 0
+#     longitud = len(n)
+#     for i in n[-1::-1]:
+#         if i != '0':
+#             decimal = decimal + (2 **(len(n) - longitud))
+#         longitud = longitud - 1
+#     return decimal
+# bins =binario("10101010")
+# print(bins)
+
+# def binario(n:str):
+#     decimal = 0
+#     longitud = len(n)
+#     for i in reversed(n):
+#         if i == '1':
+#             decimal = decimal + (2** (len(n) - longitud))
+#         longitud = longitud - 1
+#     return decimal
+
+# bins = binario("10101010")
+# def binario_a_decimal(n:str):
+#     decimal = 0
+#     longitud = len(n)
+#     for i in range(longitud):
+#         bit = int(n[longitud -1 -i])
+#         decimal += bit * (2**i)
+
+#     return decimal 
+# decimal = binario_a_decimal("101010")
+# print(decimal)
+
+# def decimal_a_binario(n:int):
+#     if n == 0:
+#         return '0'
+    
+#     binario = ''
+#     while n > 0:
+#         residuo = n % 2 
+#         binario = str(residuo) + binario
+        
+#         n = n // 2
+#     return binario
+# n = 37
+# binario = decimal_a_binario(n)
+# print(f" el numero {n} en binario es:{binario}")
+# -----------------invirtiendo los textos en una funcion esta con la explicacion de chatgpt
 
 # def inverted_text(text:str)-> str:
 
 #     return text[-1::-1].capitalize()
 
+#----------- invirtiendo los textos en una funcion 1er intento con los conocimientos base
 # print(inverted_text("leonardo fabio"))
 # def inverted_text(text:str)-> str:
 #     newText = ""
@@ -13,6 +61,8 @@
 #     newText += text[0].capitalize()
 #     return newText
 
+
+#--------------- practica aspect ratio de una imagen 
 # import urllib.request
 # import json
 # from PIL import Image
@@ -46,6 +96,8 @@
 #             return None
     
 # aspect_ratio(url,"nuevo.png")
+
+#-------------- poligonos calculo para saber el area 1er intento 
 # def poligonos(p:dict):
     
 #     if p['tipo'] == "triangulo":
@@ -69,7 +121,11 @@
 #     "base":5,
 #     "altura":3,
 # }}
+
+
 # poligonos(p)
+
+# --------------------n primos 
 # def primos(n1:int):
 #     uno = 1
 #     result = n1 <= uno
