@@ -1,0 +1,40 @@
+import pandas
+dictionario = {"1":{'id':1, 'name':'leo','desc':{'compra':'teclado'}},'2':{'id':2,'name':'eli','desc':{'compra':'leche'}}}
+
+def description_client(dictionary:dict)-> dict:
+    elementos = {
+        indice: item.get('desc', {}) if indice == '1' else {}
+        for indice, item in dictionario.items()
+    }
+    print(elementos)
+data = {
+    "Nombre": ["Alice", "Bob", "Charlie"],
+    "Edad": [25, 30, 35],
+    "Ciudad": ["Madrid", "Barcelona", "Valencia"]
+}
+# description_client(dictionario)
+df = pandas.DataFrame(data)
+codes = [{name:int(code['Edad']) * 3/2}
+          for _, code in df.iterrows()
+          for name in [code['Nombre']] 
+          ]
+df['licencias'] = [
+   list(name.values())[0]
+    for name in codes
+]
+
+import numpy as np
+arr = np.random.rand(2, 1, 3)
+print(arr[..., 0])
+codes = []
+licencias = {}
+for i, value in df.iterrows():
+    for name in [value['Nombre']]:
+        if name not in licencias.keys():
+            licencias[name] = value['Edad'] *3/2 
+    
+codes.append(licencias)
+print(codes)
+
+
+ 
